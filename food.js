@@ -1,6 +1,6 @@
 const Food = function(name, replValue) {
   this.name = name;
-  this.replValue = 0;
+  this.replValue = replValue;
 
 }
 
