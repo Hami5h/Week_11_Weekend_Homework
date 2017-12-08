@@ -9,19 +9,23 @@ describe('Heroe', function() {
   });
 
   it('Heroe should have a name', function(){
-    assert.strictEqual(heroe.name, 'Callum')
+    assert.strictEqual(heroe.name, 'Callum');
   });
 
   it('Heroe should have health value', function(){
-    assert.strictEqual(heroe.health, 100)
+    assert.strictEqual(heroe.health, 100);
   });
 
   it('Heroe should have favourite food', function(){
-    assert.strictEqual(heroe.food, 'Tatties')
+    assert.strictEqual(heroe.food, 'Tatties');
   });
 
   it('Heroe should be able to talk', function(){
-    assert.strictEqual(heroe.talk(), 'Hi! My name is Callum')
+    assert.strictEqual(heroe.talk(), 'Hi! My name is Callum');
   });
+
+  it('Heroe has no tasks to complete', function(){
+    assert.strictEqual(heroe.tasks.length, 0);
+  })
 
 });
