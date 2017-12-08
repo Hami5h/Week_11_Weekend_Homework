@@ -9,6 +9,7 @@ describe('Heroe', function() {
   beforeEach(function() {
     heroe = new Heroe('Callum', 100, 'Tatties');
     task1 = new Task(1, 3, 300)
+    task2 = new Task(3, 2, 200)
   });
 
   it('Heroe should have a name', function(){
@@ -38,9 +39,10 @@ describe('Heroe', function() {
 
   it('Heroe can remove completed tasks', function() {
     heroe.add(task1);
-    assert.strictEqual(heroe.tasks.length, 1);
+    heroe.add(task2);
+    assert.strictEqual(heroe.tasks.length, 2);
     heroe.remove(task1);
-    assert.strictEqual(heroe.tasks.length, 0);
+    assert.strictEqual(heroe.tasks.length, 1);
   })
 
 

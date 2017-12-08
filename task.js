@@ -1,7 +1,7 @@
 const Task = function(level, urgency, reward) {
-  this.level = 0;
-  this.urgency = 0;
-  this.reward = 0;
+  this.level = level;
+  this.urgency = urgency;
+  this.reward = reward;
   this.tasks = [];
   this.completed = false;
 }
