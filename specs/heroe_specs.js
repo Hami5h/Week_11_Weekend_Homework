@@ -1,11 +1,14 @@
 const Heroe = require('../heroe.js')
+const Task = require('../task.js')
 const assert = require('assert');
 
 describe('Heroe', function() {
   let heroe;
+  let task;
 
   beforeEach(function() {
     heroe = new Heroe('Callum', 100, 'Tatties');
+    task1 = new Task(1, 3, 300)
   });
 
   it('Heroe should have a name', function(){
@@ -27,5 +30,19 @@ describe('Heroe', function() {
   it('Heroe has no tasks to complete', function(){
     assert.strictEqual(heroe.tasks.length, 0);
   })
+
+  it('Heroe has tasks to complete', function(){
+    heroe.add(task1);
+    assert.strictEqual(heroe.tasks.length, 1);
+  })
+
+  it('Heroe can remove completed tasks', function() {
+    heroe.add(task1);
+    assert.strictEqual(heroe.tasks.length, 1);
+    heroe.remove(task1);
+    assert.strictEqual(heroe.tasks.length, 0);
+  })
+
+
 
 });
