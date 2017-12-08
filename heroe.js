@@ -16,6 +16,10 @@ Heroe.prototype.add = function(task) {
 Heroe.prototype.remove = function(task) {
   index = this.tasks.indexOf(task);
   this.tasks.splice(index, 1);
+};
+
+Heroe.prototype.eat = function(food) {
+  return this.health += food.replValue;
 }
 
 module.exports = Heroe

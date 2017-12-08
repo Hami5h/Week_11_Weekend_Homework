@@ -1,15 +1,19 @@
-const Heroe = require('../heroe.js')
-const Task = require('../task.js')
+const Heroe = require('../heroe.js');
+const Task = require('../task.js');
+const Food = require('../food.js')
 const assert = require('assert');
 
 describe('Heroe', function() {
   let heroe;
   let task;
+  let food;
 
   beforeEach(function() {
     heroe = new Heroe('Callum', 100, 'Tatties');
-    task1 = new Task(1, 3, 300)
-    task2 = new Task(3, 2, 200)
+    task1 = new Task(1, 3, 300);
+    task2 = new Task(3, 2, 200);
+    food1 = new Food('Bacon roll', 70);
+    food2 = new Food('Beans', 30);
   });
 
   it('Heroe should have a name', function(){
@@ -43,6 +47,12 @@ describe('Heroe', function() {
     assert.strictEqual(heroe.tasks.length, 2);
     heroe.remove(task1);
     assert.strictEqual(heroe.tasks.length, 1);
+  })
+
+  it('Heroe can eat food and recover health', function() {
+    assert.strictEqual(heroe.health, 100);
+    heroe.eat(food1);
+    assert.strictEqual(heroe.health, 170);
   })
 
 
