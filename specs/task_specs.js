@@ -18,4 +18,9 @@ describe('Task', function() {
     assert.strictEqual(task2.level, 3);
   });
 
+  it('Task should have an urgency', function() {
+    assert.strictEqual(task1.urgency, 3);
+    assert.strictEqual(task2.urgency, 2);
+  });
+
 });
