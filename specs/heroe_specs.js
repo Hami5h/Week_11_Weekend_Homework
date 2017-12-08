@@ -13,7 +13,7 @@ describe('Heroe', function() {
     task1 = new Task(1, 3, 300);
     task2 = new Task(3, 2, 200);
     food1 = new Food('Bacon roll', 70);
-    food2 = new Food('Beans', 30);
+    food2 = new Food('Tatties', 30);
   });
 
   it('Heroe should have a name', function(){
@@ -53,6 +53,12 @@ describe('Heroe', function() {
     assert.strictEqual(heroe.health, 100);
     heroe.eat(food1);
     assert.strictEqual(heroe.health, 170);
+  })
+
+  it('Heroe can eat favourite food and recover extra health', function() {
+    assert.strictEqual(heroe.health, 100);
+    heroe.eat(food2);
+    assert.strictEqual(heroe.health, 145);
   })
 
 

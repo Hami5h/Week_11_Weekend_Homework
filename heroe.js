@@ -11,7 +11,7 @@ Heroe.prototype.talk = function() {
 
 Heroe.prototype.add = function(task) {
   this.tasks.push(task);
-}
+};
 
 Heroe.prototype.remove = function(task) {
   index = this.tasks.indexOf(task);
@@ -19,7 +19,13 @@ Heroe.prototype.remove = function(task) {
 };
 
 Heroe.prototype.eat = function(food) {
-  return this.health += food.replValue;
-}
+  if(food.name === this.food){
+    this.health += (food.replValue * 1.5)
+  } else {
+    this.health += food.replValue;
+  }
+};
+
+
 
 module.exports = Heroe
