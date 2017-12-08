@@ -23,4 +23,9 @@ describe('Task', function() {
     assert.strictEqual(task2.urgency, 2);
   });
 
+  it('Task should have a reward', function() {
+    assert.strictEqual(task1.reward, 300);
+    assert.strictEqual(task2.reward, 200);
+  });
+
 });
