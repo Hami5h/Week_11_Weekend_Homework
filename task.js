@@ -1,4 +1,4 @@
-const Task = function() {
+const Task = function(level, urgency, reward) {
   this.level = 0;
   this.urgency = 0;
   this.reward = 0;
