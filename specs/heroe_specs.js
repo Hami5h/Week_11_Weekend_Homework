@@ -20,4 +20,8 @@ describe('Heroe', function() {
     assert.strictEqual(heroe.food, 'Tatties')
   });
 
+  it('Heroe should be able to talk', function(){
+    assert.strictEqual(heroe.talk(), 'Hi! My name is Callum')
+  });
+
 });
