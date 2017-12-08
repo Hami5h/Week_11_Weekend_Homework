@@ -6,5 +6,9 @@ const Task = function(level, urgency, reward) {
   this.completed = false;
 }
 
+Task.prototype.taskComplete = function(status) {
+  return this.completed = status;
+};
+
 
 module.exports = Task
