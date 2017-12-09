@@ -40,5 +40,12 @@ Heroe.prototype.sortedTaskByUrgency = function() {
   return sortByUrgency;
 }
 
+Heroe.prototype.sortedTaskByReward = function() {
+  let sortByReward = this.tasks.sort(function(a, b) {
+    return a.reward - b.reward;
+  })
+  return sortByReward;
+}
+
 
 module.exports = Heroe
