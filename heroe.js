@@ -26,6 +26,12 @@ Heroe.prototype.eat = function(food) {
   }
 };
 
+Heroe.prototype.sortedTaskByDifficulty = function() {
+  let sortByLevel = this.tasks.sort(function(a, b) {
+    return a.level - b.level;
+  })
+  return sortByLevel;
+}
 
 
 module.exports = Heroe
