@@ -3,7 +3,7 @@ const Heroe = function(name, health, food) {
   this.health = health;
   this.food = food;
   this.tasks = [];
-  this.completedTasks = [];
+
 }
 
 Heroe.prototype.talk = function() {
@@ -48,9 +48,7 @@ Heroe.prototype.sortedTaskByReward = function() {
   return sortByReward;
 };
 
-Heroe.prototype.addCompletedTask = function (task) {
-  this.completedTasks.push(task)
-}
+
 
 
 

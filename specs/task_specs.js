@@ -9,8 +9,8 @@ describe('Task', function() {
 
   beforeEach(function() {
     heroe = new Heroe('Chris', 800, 'Scones');
-    task1 = new Task(1, 3, 300)
-    task2 = new Task(3, 2, 200)
+    task1 = new Task(1, 3, 300, true)
+    task2 = new Task(3, 2, 200, false)
   });
 
   it('Task should have a level', function() {
@@ -29,8 +29,8 @@ describe('Task', function() {
   });
 
   it('Task can be marked complete', function() {
-    assert.strictEqual(task1.taskComplete(true), true);
-    assert.strictEqual(task1.taskComplete(false), false);
+    assert.strictEqual(task1.completed, true);
+    assert.strictEqual(task2.completed, false);
   });
 
 });

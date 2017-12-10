@@ -83,17 +83,7 @@ describe('Heroe', function() {
     assert.deepStrictEqual(heroe.sortedTaskByReward(),[task3, task2, task1]);
   });
 
-  it('Heroe completed tasks is none', function() {
-    assert.strictEqual(heroe.completedTasks.length, 0);
-  })
-
-  it('Heroe can add completed tasks', function() {
-    heroe.addCompletedTask(task1);
-    heroe.addCompletedTask(task2);
-    assert.strictEqual(task1.taskComplete(true), true);
-    assert.strictEqual(task2.taskComplete(true), true);
-    assert.strictEqual(heroe.completedTasks.length, 2);
-  })
+  
 
 
 
