@@ -3,6 +3,7 @@ const Heroe = function(name, health, food) {
   this.health = health;
   this.food = food;
   this.tasks = [];
+  this.completedTasks = [];
 }
 
 Heroe.prototype.talk = function() {
@@ -31,21 +32,26 @@ Heroe.prototype.sortedTaskByDifficulty = function() {
     return a.level - b.level;
   })
   return sortByLevel;
-}
+};
 
 Heroe.prototype.sortedTaskByUrgency = function() {
   let sortByUrgency = this.tasks.sort(function(a, b) {
     return a.urgency - b.urgency;
   })
   return sortByUrgency;
-}
+};
 
 Heroe.prototype.sortedTaskByReward = function() {
   let sortByReward = this.tasks.sort(function(a, b) {
     return a.reward - b.reward;
   })
   return sortByReward;
+};
+
+Heroe.prototype.addCompletedTask = function (task) {
+  this.completedTasks.push(task)
 }
+
 
 
 module.exports = Heroe
