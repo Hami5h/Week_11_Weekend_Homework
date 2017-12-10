@@ -10,9 +10,9 @@ describe('Heroe', function() {
 
   beforeEach(function() {
     heroe = new Heroe('Callum', 100, 'Tatties');
-    task1 = new Task(1, 3, 300);
-    task2 = new Task(3, 2, 200);
-    task3 = new Task(5, 4, 100);
+    task1 = new Task(1, 3, 300, true);
+    task2 = new Task(3, 2, 200, true);
+    task3 = new Task(5, 4, 100, false);
     food1 = new Food('Bacon roll', 70);
     food2 = new Food('Tatties', 30);
   });
@@ -83,7 +83,19 @@ describe('Heroe', function() {
     assert.deepStrictEqual(heroe.sortedTaskByReward(),[task3, task2, task1]);
   });
 
-  
+  it("Heroe should be able to find completed tasks", function() {
+    heroe.add(task1);
+    heroe.add(task2);
+    heroe.add(task3);
+    assert.deepStrictEqual(heroe.completedTasks(true), task1, task2);
+  });
+
+  it("Heroe should be able to find incomplete tasks", function() {
+    heroe.add(task1);
+    heroe.add(task2);
+    heroe.add(task3);
+    assert.deepStrictEqual(heroe.completedTasks(false), task3);
+  });
 
 
 
