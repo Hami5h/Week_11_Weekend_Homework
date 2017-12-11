@@ -87,14 +87,14 @@ describe('Heroe', function() {
     heroe.add(task1);
     heroe.add(task2);
     heroe.add(task3);
-    assert.deepStrictEqual(heroe.completedTasks(true), task1, task2);
+    assert.deepStrictEqual(heroe.completedTasks(true), [task1, task2]);
   });
 
   it("Heroe should be able to find incomplete tasks", function() {
     heroe.add(task1);
     heroe.add(task2);
     heroe.add(task3);
-    assert.deepStrictEqual(heroe.completedTasks(false), task3);
+    assert.deepStrictEqual(heroe.completedTasks(false), [task3]);
   });
 
 

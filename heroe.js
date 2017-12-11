@@ -49,7 +49,7 @@ Heroe.prototype.sortedTaskByReward = function() {
 };
 
 Heroe.prototype.completedTasks = function (status) {
-  let foundTask = this.tasks.find(function(task) {
+  let foundTask = this.tasks.filter(function(task) {
     return task.completed === status;
   })
   return foundTask;
